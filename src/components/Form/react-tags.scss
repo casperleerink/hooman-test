@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.react-tags-container {
+  background-color: $background-dark;
+  border-radius: 1.25rem;
+  margin-top: 0.75rem;
+  padding: 1rem;
+  line-height: 160%;
+  font-size: 1rem;
+  height: 5rem;
+  @include mq($small) {
+    height: 7rem;
+  }
+  // height: clamp(4rem, 4.5rem 5rem);
+  overflow-y: scroll;
+}
+
+.ReactTags__tags {
+  // background-color: $background;
+  // color: $text;
+  line-height: 160%;
+}
+
+.ReactTags__tag {
+  background-color: $background;
+  color: $text;
+  border-radius: 1rem;
+  margin-right: 0.625rem;
+  margin-bottom: 0.315rem;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  // cursor: pointer !important;
+}
+
+.ReactTags__remove {
+  border: none;
+  background-color: transparent;
+  color: $text;
+  cursor: pointer;
+  padding-left: 0.2rem;
+  font-size: 1rem;
+  &:hover {
+    color: rgba(247, 121, 121, 0.884);
+  }
+}
+.ReactTags__tagInput {
+  display: inline;
+}
+.ReactTags__tagInputField {
+  background-color: transparent;
+  border: none;
+  color: $text;
+  width: 5rem;
+  font-size: 1rem;
+  display: inline;
+  &:focus {
+    outline: none;
+  }
+}

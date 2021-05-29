@@ -1,0 +1,110 @@
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The font file(s) should be placed relative to the regular CSS file.
+ *
+ */
+
+/*
+ * Legal Disclaimer for Web licence
+ *
+ * Licence to use self-hosted webfonts for displaying dynamic text on specified website domains. Our package includes WOFF and WOFF2 font formats.
+ *
+ * Should the license page views limit be exceeded the license holder will be required to contact Lineto.com for an upgrade.
+ * 
+ * It is strictly prohibited to rename the font and to download or use these fonts in any other media. 
+ * 
+ * These Web fonts are licensed exclusively for the use on the following domain(s) and their subdomains:
+ *
+ * eb5marketplace.com (monthly pageviews: <50K)
+ *
+ */
+
+/* complete */
+
+@font-face {
+  font-family: "SupremeLLWeb-Light";
+  src: url("SupremeLLWeb-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SupremeLLWeb-Light";
+  src: url("SupremeLLWeb-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SupremeLLWeb-Medium";
+  src: url("SupremeLLWeb-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SupremeLLWeb-Medium";
+  src: url("SupremeLLWeb-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SupremeLLWeb-Bold";
+  src: url("SupremeLLWeb-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SupremeLLWeb-Bold";
+  src: url("SupremeLLWeb-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SupremeLLWeb-BoldFlat";
+  src: url("SupremeLLWeb-BoldFlat.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SupremeLLWeb-BoldFlat";
+  src: url("SupremeLLWeb-BoldFlat.woff2") format("woff2");
+}
+
+
+/* subset */
+
+@font-face {
+  font-family: "SupremeLLSub-LightSubset";
+  src: url("SupremeLLSub-LightSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SupremeLLSub-LightSubset";
+  src: url("SupremeLLSub-LightSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SupremeLLSub-MediumSubset";
+  src: url("SupremeLLSub-MediumSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SupremeLLSub-MediumSubset";
+  src: url("SupremeLLSub-MediumSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SupremeLLSub-BoldSubset";
+  src: url("SupremeLLSub-BoldSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SupremeLLSub-BoldSubset";
+  src: url("SupremeLLSub-BoldSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SupremeLLSub-BoldFlatSubset";
+  src: url("SupremeLLSub-BoldFlatSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SupremeLLSub-BoldFlatSubset";
+  src: url("SupremeLLSub-BoldFlatSubset.woff") format("woff");
+}
+
+

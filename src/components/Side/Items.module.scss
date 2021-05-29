@@ -1,0 +1,93 @@
+@import "../../styles/variables";
+
+.container {
+  list-style-type: none;
+  font-size: 0.875rem;
+}
+
+.line {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  width: 75%;
+  background-color: $accent;
+  height: 3px;
+  border-radius: 1rem;
+  border: none;
+}
+.smallLine {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  background-color: $accent;
+  height: 2px;
+  border-radius: 1rem;
+  border: none;
+}
+
+.item {
+  color: $accent;
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  transition: padding 0.3s ease;
+  position: relative;
+  &:hover {
+    opacity: 0.9;
+    &::after {
+      content: attr(data-title);
+      display: inline-block;
+      position: absolute;
+      top: 0%;
+      left: 100%;
+      width: 400%;
+      // background-color: $background;
+      border-radius: 1.25rem;
+      color: $text;
+      font-size: 0.75rem;
+      padding: 0.3rem;
+      z-index: 2;
+    }
+  }
+}
+
+.logo {
+  // box-sizing: content-box;
+  padding-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  svg {
+    height: 1.2em;
+    width: 1.2em;
+    path {
+      fill: $accent;
+    }
+  }
+}
+.outline {
+  svg {
+    path {
+      stroke: $accent;
+      fill: none;
+    }
+  }
+}
+.active {
+  color: $text;
+
+  svg {
+    path {
+      fill: $text;
+    }
+  }
+  .outline {
+    svg {
+      path {
+        stroke: $text;
+        fill: none;
+      }
+    }
+  }
+}

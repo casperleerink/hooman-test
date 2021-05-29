@@ -1,0 +1,356 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.main {
+  width: 100%;
+  box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.2);
+  border-radius: 1.25rem;
+  margin-left: 2.7rem;
+  @include mq($menu-breakpoint) {
+    margin-left: 1rem;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem;
+  padding-bottom: 0;
+  color: $text;
+  @include mq($mobile) {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 1rem;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    color: $text;
+    padding: 0.6rem 1.4rem;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    cursor: pointer;
+    &:nth-child(3) {
+      background-color: $accent;
+      color: $background;
+      // padding: 0.6rem 1.4rem;
+    }
+  }
+}
+
+.form {
+  display: block;
+  padding: 2rem;
+  padding-top: 1.25rem;
+  // padding-top: 5.6rem;
+  color: $text;
+  @include mq($mobile) {
+    padding: 1rem;
+  }
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  @include mq($mobile) {
+    flex-wrap: wrap;
+  }
+}
+.title {
+  flex-grow: 1;
+  position: relative;
+  @include mq($mobile) {
+    margin-top: 0.5rem;
+  }
+  p {
+    position: absolute;
+    top: -2.5rem;
+    color: $background-dark;
+    padding: 6px 1rem;
+    @include mq($mobile) {
+      padding: 6px 0;
+      top: -2rem;
+    }
+  }
+  textarea {
+    width: 100%;
+    font-family: SupremeLLWeb-Medium;
+    background-color: $background-dark;
+    color: $text;
+    border: none;
+    border-radius: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 163%;
+    padding: 1rem;
+    resize: none;
+    overflow-y: hidden;
+    min-height: 100%;
+    &:focus {
+      outline: none;
+    }
+    @include mq($menu-breakpoint) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.imageContainer {
+  width: 12.5rem;
+  padding-left: 1rem;
+  @include mq($mobile) {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 0.8rem;
+  }
+  .dropContainer {
+    background-color: $background-dark;
+    border-radius: 1.25rem;
+    min-height: 4.5rem;
+    position: relative;
+    overflow: hidden;
+    label {
+      display: block;
+      width: 100%;
+      min-height: 4.5rem;
+      margin: 0 auto;
+      cursor: pointer;
+      input {
+        width: 100%;
+        min-height: 4.5rem;
+        visibility: hidden;
+      }
+    }
+
+    .image {
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+  .imageDesc {
+    margin-top: 6px;
+    background-color: $background-dark;
+    border-radius: 1.25rem;
+    border: none;
+    font-size: 0.875rem;
+    padding: 0.25rem 1rem;
+    width: 100%;
+    color: $text;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: $background;
+    }
+  }
+}
+
+.row2 {
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+  @include mq($medium) {
+    // justify-content: flex-start;
+    // padding-left: 1.25rem;
+    padding: 0.75rem 0;
+    flex-direction: row-reverse;
+  }
+  @include mq($mobile) {
+    justify-content: space-between;
+  }
+}
+
+.minutes {
+  input {
+    background-color: $background-dark;
+    color: $text;
+    border-radius: 0.625rem;
+    border: none;
+    font-size: 0.75rem;
+    width: 4.6rem;
+    padding: 0.42rem;
+    padding-left: 0.6rem;
+    &::placeholder {
+      color: $background;
+    }
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    -moz-appearance: textfield;
+    @include mq($mobile) {
+      flex-grow: 1;
+    }
+  }
+  span {
+    margin-left: -1.7rem;
+    color: $background;
+    font-size: 0.75rem;
+  }
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  @include mq($mobile) {
+    padding: 0;
+  }
+  p {
+    font-size: 1.125rem;
+    padding: 0.1rem;
+    padding-right: 0.5rem;
+    color: $background-dark;
+    // @include mq($mobile) {
+    //   padding: 0;
+    // }
+  }
+  input {
+    background-color: $background-dark;
+    color: $text;
+    font-size: 0.75rem;
+    border: none;
+    border-radius: 0.625rem;
+    padding: 0.42rem;
+    width: 5.3rem;
+    text-align: center;
+    &::placeholder {
+      color: $background;
+    }
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+  }
+}
+
+.select {
+  width: 100%;
+  max-width: 11.5625rem;
+  // width: 11.5625rem;
+  background-color: $background-dark;
+  border-radius: 0.55rem;
+  font-size: 0.75rem;
+  max-height: 1.5rem;
+  @include mq($mobile) {
+    max-width: 100%;
+    margin-top: 0.5rem;
+  }
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+
+  [class$="-control"] {
+    background-color: $background-dark;
+    border: none;
+    border-radius: 0.55rem;
+    min-height: 100%;
+    // color: $text;
+  }
+  [class$="-ValueContainer"] {
+    color: $text;
+  }
+  [class$="-indicatorContainer"] {
+    padding: 0.3rem 0.5rem;
+    svg {
+      fill: $text;
+    }
+  }
+  [class$="-indicatorSeparator"] {
+    display: none;
+  }
+  [class$="-singleValue"] {
+    color: $text;
+  }
+  [class$="-menu"] {
+    background-color: $background-dark;
+    color: $text;
+  }
+  [class$="-menuList"] {
+    margin: 0;
+    padding: 0;
+  }
+  [class$="-option"] {
+    color: $text;
+    &:hover,
+    &:focus {
+      background-color: $background;
+    }
+  }
+}
+
+.row4 {
+  margin-top: 0.75rem;
+  justify-content: space-between;
+  @include mq($small) {
+    flex-direction: column-reverse;
+  }
+}
+.leftColumn {
+  min-width: 60%;
+  @include mq($small) {
+    padding-top: 1.6rem;
+  }
+}
+.metaDescription {
+  width: 100%;
+  background-color: $background-dark;
+  color: $text;
+  border: none;
+  border-radius: 1.25rem;
+  resize: none;
+  padding: 0.8rem 1.6rem;
+  font-family: SupremeLLWeb-Light;
+  &::placeholder {
+    color: $background;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.rightColumn {
+  flex-grow: 1;
+  padding-left: 1rem;
+  @include mq($small) {
+    padding-left: 0;
+    // padding-top: 0.8rem;
+  }
+}
+.pageTitleTag {
+  width: 100%;
+  background-color: $background-dark;
+  color: $text;
+  border: none;
+  border-radius: 1.25rem;
+  resize: none;
+  padding: 0.8rem 1.6rem;
+  @include mq($small) {
+    height: 3.3rem;
+  }
+  font-family: SupremeLLWeb-Light;
+  &::placeholder {
+    color: $background;
+  }
+  &:focus {
+    outline: none;
+  }
+}

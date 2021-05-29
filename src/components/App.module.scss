@@ -1,0 +1,8 @@
+@import "../styles/mixins";
+.container {
+  padding: 2.5rem;
+  display: flex;
+  @include mq($menu-breakpoint) {
+    padding: 1rem;
+  }
+}
