@@ -1,9 +1,10 @@
 import React from "react";
-import Select, { components } from "react-select";
+import Select, { components, OptionTypeBase } from "react-select";
 import { ReactComponent as CaretDown } from "../../Icons/caret-down.svg";
 
 interface SelectProps {
-  onChange: (option: string) => void;
+  category: OptionTypeBase;
+  onChange: (category: OptionTypeBase) => void;
   className: string;
 }
 
@@ -29,7 +30,11 @@ const customStyles = {
   }),
 };
 
-const CustomSelect: React.FC<SelectProps> = ({ onChange, className }) => {
+const CustomSelect: React.FC<SelectProps> = ({
+  category,
+  onChange,
+  className,
+}) => {
   const options = Categories.map((c) => {
     return { label: c, value: c };
   });
@@ -45,9 +50,10 @@ const CustomSelect: React.FC<SelectProps> = ({ onChange, className }) => {
     <Select
       onChange={(val) => {
         if (val) {
-          onChange(val.value);
+          onChange(val);
         }
       }}
+      value={category}
       styles={customStyles}
       options={options}
       components={{ DropdownIndicator }}

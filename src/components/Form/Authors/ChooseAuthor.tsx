@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Author } from "./Authors";
 import style from "./Authors.module.scss";
-import { useOutsideAlerter } from "../Body/LinkInput.js";
+import { useOutsideAlerter } from "../SlatePluginBody/ToolbarLinkButton";
 
 interface ChooseAuthorProps {
   callback: (author: Author) => void;

@@ -7,10 +7,11 @@ import ActionButtons from "./ActionButtons";
 import CustomSelect from "./Select";
 import Date from "./Date";
 import Minutes from "./Minutes";
-// import Body from "./Body/Body.js";
-import Body from "./SlatePluginBody/Body";
-import Authors from "./Authors/Authors";
+import Body, { createElement } from "./SlatePluginBody/Body";
+import Authors, { Author } from "./Authors/Authors";
 import Tags from "./Tags";
+import { TNode, ELEMENT_PARAGRAPH } from "@udecode/slate-plugins";
+import { OptionTypeBase } from "react-select";
 
 interface Tag {
   id: string;
@@ -21,29 +22,27 @@ interface FormValues {
   title: string;
   image: File | null;
   imageDescription: string;
-  category: string;
+  category: OptionTypeBase;
   date: string;
   length: number;
-  body: any;
+  body: TNode<{}>[];
   metaDescription: string;
-  authors: string[];
+  authors: Author[];
   pageTitleTag: string;
   tags: Tag[];
 }
 
+const initialBody = [
+  createElement("Your article goes here...", { type: ELEMENT_PARAGRAPH }),
+];
 const initalValues: FormValues = {
   title: "",
   image: null,
   imageDescription: "",
-  category: "All",
+  category: { label: "All", value: "All" },
   date: "",
   length: 0,
-  body: [
-    {
-      type: "paragraph",
-      children: [{ text: "The body of the article goes here." }],
-    },
-  ],
+  body: initialBody,
   metaDescription: "",
   authors: [],
   pageTitleTag: "",
@@ -64,7 +63,8 @@ const Form: React.FC = () => {
         className={style.actionButtons}
         onDiscard={() => setFormValues(initalValues)}
         onSave={() => {
-          console.table(formValues);
+          console.log(formValues);
+          alert("Article Saved!");
         }}
       />
       <form className={style.form} onSubmit={(e) => e.preventDefault()}>
@@ -113,6 +113,7 @@ const Form: React.FC = () => {
           <CustomSelect
             className={style.select}
             onChange={(val) => setFormValues({ ...formValues, category: val })}
+            category={formValues.category}
           />
         </div>
         {/* Row 3 */}
@@ -122,7 +123,15 @@ const Form: React.FC = () => {
             setFormValues({ ...formValues, body: v });
           }}
         /> */}
-        <Body />
+        <Body
+          value={formValues.body}
+          setValue={(value) => {
+            setFormValues({
+              ...formValues,
+              body: value,
+            });
+          }}
+        />
         {/* Row 4! */}
         <div className={`${style.row} ${style.row4}`}>
           {/* Column 1 */}
@@ -142,10 +151,11 @@ const Form: React.FC = () => {
               }}
             />
             <Authors
-              onChange={(authors) => {
+              authors={formValues.authors}
+              setAuthors={(authors) => {
                 setFormValues({
                   ...formValues,
-                  authors: authors.map((a) => a.name),
+                  authors,
                 });
               }}
             />

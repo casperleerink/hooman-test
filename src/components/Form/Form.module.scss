@@ -173,11 +173,14 @@
     flex-direction: row-reverse;
   }
   @include mq($mobile) {
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 }
 
 .minutes {
+  @include mq($mobile) {
+    margin-left: 1rem;
+  }
   input {
     background-color: $background-dark;
     color: $text;
@@ -185,7 +188,7 @@
     border: none;
     font-size: 0.75rem;
     width: 4.6rem;
-    padding: 0.42rem;
+    padding: 0.48rem;
     padding-left: 0.6rem;
     &::placeholder {
       color: $background;
@@ -223,6 +226,7 @@
     padding: 0.1rem;
     padding-right: 0.5rem;
     color: $background-dark;
+    padding-top: 0.15rem;
     // @include mq($mobile) {
     //   padding: 0;
     // }
@@ -233,7 +237,7 @@
     font-size: 0.75rem;
     border: none;
     border-radius: 0.625rem;
-    padding: 0.42rem;
+    padding: 0.48rem;
     width: 5.3rem;
     text-align: center;
     &::placeholder {

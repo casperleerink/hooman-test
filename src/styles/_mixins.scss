@@ -28,58 +28,6 @@
     font-family: "SupremeLLWeb-Bold";
     src: url("./fonts/SupremeLLWeb-Bold.woff2") format("woff2");
   }
-
-  @font-face {
-    font-family: "SupremeLLWeb-BoldFlat";
-    src: url("./fonts/SupremeLLWeb-BoldFlat.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "SupremeLLWeb-BoldFlat";
-    src: url("./fonts/SupremeLLWeb-BoldFlat.woff2") format("woff2");
-  }
-
-  /* subset */
-
-  @font-face {
-    font-family: "SupremeLLSub-LightSubset";
-    src: url("./fonts/SupremeLLSub-LightSubset.woff2") format("woff2");
-  }
-
-  @font-face {
-    font-family: "SupremeLLSub-LightSubset";
-    src: url("./fonts/SupremeLLSub-LightSubset.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "SupremeLLSub-MediumSubset";
-    src: url("./fonts/SupremeLLSub-MediumSubset.woff2") format("woff2");
-  }
-
-  @font-face {
-    font-family: "SupremeLLSub-MediumSubset";
-    src: url("./fonts/SupremeLLSub-MediumSubset.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "SupremeLLSub-BoldSubset";
-    src: url("./fonts/SupremeLLSub-BoldSubset.woff2") format("woff2");
-  }
-
-  @font-face {
-    font-family: "SupremeLLSub-BoldSubset";
-    src: url("./fonts/SupremeLLSub-BoldSubset.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "SupremeLLSub-BoldFlatSubset";
-    src: url("./fonts/SupremeLLSub-BoldFlatSubset.woff2") format("woff2");
-  }
-
-  @font-face {
-    font-family: "SupremeLLSub-BoldFlatSubset";
-    src: url("./fonts/SupremeLLSub-BoldFlatSubset.woff") format("woff");
-  }
 }
 
 $medium: 1175px;

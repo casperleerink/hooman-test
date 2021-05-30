@@ -10,10 +10,10 @@ export interface Author {
   name: string;
 }
 interface AuthorsProps {
-  onChange: (authors: Author[]) => void;
+  authors: Author[];
+  setAuthors: (authors: Author[]) => void;
 }
-const Authors: React.FC<AuthorsProps> = ({ onChange }) => {
-  const [authors, setAuthors] = useState<Author[]>([]);
+const Authors: React.FC<AuthorsProps> = ({ authors, setAuthors }) => {
   const [showChoose, setShowChoose] = useState(false);
 
   const handleRemove = (e: any, author: Author) => {
@@ -26,7 +26,6 @@ const Authors: React.FC<AuthorsProps> = ({ onChange }) => {
       }
     });
     setAuthors(filtered);
-    onChange(filtered);
   };
 
   const showChooseAuthor = (e: any) => {
@@ -55,7 +54,6 @@ const Authors: React.FC<AuthorsProps> = ({ onChange }) => {
         <ChooseAuthor
           callback={(author) => {
             setAuthors([...authors, author]);
-            onChange([...authors, author]);
             setShowChoose(false);
           }}
           cancel={() => setShowChoose(false)}
