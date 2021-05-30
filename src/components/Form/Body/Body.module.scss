@@ -1,21 +1,36 @@
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
-.container {
+
+.scrollbarContainer {
+  // min-height: 18.74rem;
   background-color: $background-dark;
-  font-family: SupremeLLWeb-Light;
-  min-height: 18.74rem;
-  max-height: 18.75rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  padding: 1rem 2.875rem 1.5rem 1.3rem;
   border-radius: 1.25rem;
-  width: 100%;
-  display: block;
-  color: $text;
   margin-top: 0.5625rem;
   @include mq($medium) {
     margin-top: 3.5625rem;
   }
+}
+.scrollbarView {
+  // background-color: $accent;
+}
+.scrollbarTrack {
+  background-color: $text;
+  transform: translateX(-0.5rem);
+}
+.scrollbarThumb {
+  background-color: $accent;
+  transform: translateX(-0.5rem);
+}
+.container {
+  font-family: SupremeLLWeb-Light;
+  // min-height: 18.75rem;
+  // max-height: 18.75rem;
+  // overflow-y: scroll;
+  // overflow-x: hidden;
+  padding: 1rem 2.875rem 1.5rem 1.3rem;
+  width: 100%;
+  display: block;
+  color: $text;
   @include mq($mobile) {
     margin-top: 0.5rem;
     padding: 1rem;

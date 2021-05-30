@@ -1,0 +1,51 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+.slate-p {
+  color: $text;
+}
+.slate-h2 {
+  color: $text;
+  margin: 0.3rem 0;
+}
+.slate-h3 {
+  color: $text;
+  margin: 0.1rem 0;
+}
+
+.slate-a {
+  color: $text;
+  text-decoration: underline;
+  &:hover {
+    color: $text-darker;
+    // cursor: pointer;
+  }
+}
+.slate-td {
+  background-color: transparent !important;
+  border: 1px solid $background !important;
+}
+
+.slate-Toolbar {
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: $text;
+  // font-size: 0.8rem;
+  font-family: SupremeLLWeb-Medium;
+  // top: -2.4475rem;
+  // left: 1rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  transform: translateX(1rem);
+  @include mq($mobile) {
+    flex-wrap: wrap;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+
+.slate-ToolbarButton-active {
+  color: $text;
+}

@@ -7,7 +7,8 @@ import ActionButtons from "./ActionButtons";
 import CustomSelect from "./Select";
 import Date from "./Date";
 import Minutes from "./Minutes";
-import Body from "./Body/Body.js";
+// import Body from "./Body/Body.js";
+import Body from "./SlatePluginBody/Body";
 import Authors from "./Authors/Authors";
 import Tags from "./Tags";
 
@@ -66,7 +67,7 @@ const Form: React.FC = () => {
           console.table(formValues);
         }}
       />
-      <form className={style.form}>
+      <form className={style.form} onSubmit={(e) => e.preventDefault()}>
         {/* Row 1 */}
         <div className={style.row}>
           <Title
@@ -115,12 +116,13 @@ const Form: React.FC = () => {
           />
         </div>
         {/* Row 3 */}
-        <Body
+        {/* <Body
           value={formValues.body}
           onChange={(v: any) => {
             setFormValues({ ...formValues, body: v });
           }}
-        />
+        /> */}
+        <Body />
         {/* Row 4! */}
         <div className={`${style.row} ${style.row4}`}>
           {/* Column 1 */}

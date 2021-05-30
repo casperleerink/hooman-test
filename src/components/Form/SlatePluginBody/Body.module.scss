@@ -1,0 +1,47 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+.container {
+  font-family: SupremeLLWeb-Light;
+  padding: 1rem 2.875rem 1rem 1.3rem;
+  background-color: #1e2735;
+  border-radius: 1rem;
+  // margin-top: 1rem;
+  overflow: scroll;
+  max-height: 18.75rem;
+  width: 100%;
+  display: block;
+  color: $text;
+  @include mq($mobile) {
+    margin-top: 0.5rem;
+    padding: 1rem;
+  }
+  &::placeholder {
+    color: $background;
+  }
+}
+
+.toolbarLabel {
+  color: $background-dark;
+  // color: $background-dark;
+  margin-right: 1rem;
+}
+
+.toolbarBtn {
+  display: flex;
+  border: none;
+  background-color: $background-dark;
+  font-family: SupremeLLWeb-Medium;
+  color: $text;
+  font-size: 0.875rem;
+  align-items: center;
+  text-align: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5625rem;
+  width: auto;
+  height: auto;
+  margin-right: 0.3125rem;
+  cursor: pointer;
+  @include mq($mobile) {
+    margin-top: 0.5rem;
+  }
+}
