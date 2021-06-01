@@ -1,3 +1,4 @@
+//Fonts
 @mixin font() {
   @font-face {
     font-family: "SupremeLLWeb-Light";
@@ -30,6 +31,7 @@
   }
 }
 
+// Media Queries
 $medium: 1175px;
 $small: 950px;
 $menu-breakpoint: 800px;

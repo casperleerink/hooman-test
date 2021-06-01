@@ -34,6 +34,7 @@ import ToolbarTableButton from "./ToolbarTableButton";
 import TableElement from "./TableElement";
 import ToolbarListButton from "./ToolbarListButton";
 
+//don't exit list or table when pressing enter
 const optionsSoftBreakPlugin = {
   rules: [
     { hotkey: "shift+enter" },
@@ -54,14 +55,16 @@ const pluginsBasic = [
   // elements
   createParagraphPlugin(), // paragraph element
   createHeadingPlugin(), // heading elements
+  createLinkPlugin(),
+  createTablePlugin(),
+  createListPlugin(),
 
   // marks
   createBoldPlugin(), // bold mark
   createItalicPlugin(), // italic mark
   createUnderlinePlugin(), // underline mark
-  createLinkPlugin(),
-  createTablePlugin(),
-  createListPlugin(),
+
+  //util
   createSoftBreakPlugin(optionsSoftBreakPlugin),
   createExitBreakPlugin(),
 ];

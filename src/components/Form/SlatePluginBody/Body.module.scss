@@ -12,6 +12,8 @@
   width: 100%;
   display: block;
   color: $text;
+
+  //Move body down before buttons start to overlap
   @include mq($medium) {
     margin-top: 2.5625rem;
   }
@@ -25,6 +27,7 @@
 }
 
 .toolbarContainer {
+  //position buttons to precice height of date - minute and select buttons on bigger screens
   position: absolute;
   font-family: SupremeLLWeb-Medium;
   top: -2.4475rem;
@@ -32,6 +35,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
+  //make sure buttons dont extend width of container on small screens
   @include mq($mobile) {
     flex-wrap: wrap;
     position: relative;
@@ -67,6 +71,7 @@
   }
 }
 
+//green when block or mark node matches (for example when text is bold)
 .active {
   background-color: $accent;
   color: $background;

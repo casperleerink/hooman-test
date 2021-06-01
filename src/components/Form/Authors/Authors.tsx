@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import style from "./Authors.module.scss";
 
 import { ReactComponent as AddIcon } from "../../../Icons/expand.svg";
 import ChooseAuthor from "./ChooseAuthor";
+import axios from "axios";
 
 export interface Author {
   img: string;
@@ -15,6 +16,24 @@ interface AuthorsProps {
 }
 const Authors: React.FC<AuthorsProps> = ({ authors, setAuthors }) => {
   const [showChoose, setShowChoose] = useState(false);
+  const [allAuthors, setAllAuthors] = useState([]);
+  useEffect(() => {
+    //get 20 random authors from randomuser api
+    axios
+      .get("https://randomuser.me/api/?results=20")
+      .then((response) => {
+        const results = response.data.results.map((user: any) => {
+          return {
+            img: user.picture.medium,
+            name: `${user.name.first} ${user.name.last}`,
+          };
+        });
+        setAllAuthors(results);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   const handleRemove = (e: any, author: Author) => {
     e.preventDefault();
@@ -52,6 +71,7 @@ const Authors: React.FC<AuthorsProps> = ({ authors, setAuthors }) => {
       </button>
       {showChoose && (
         <ChooseAuthor
+          authorsList={allAuthors}
           callback={(author) => {
             setAuthors([...authors, author]);
             setShowChoose(false);

@@ -19,10 +19,13 @@ const ToolbarLinkButton: React.FC<ToolbarLinkButtonProps> = ({ icon }) => {
   const editor = useTSlate();
   useEffect(() => {
     if (showPrompt && editor.selection) {
+      //store the selection, because when the prompt opens the selection of the editor dissapears
       selectionRef.current = editor.selection;
     }
   }, [showPrompt, editor.selection]);
   const type = getSlatePluginType(editor, ELEMENT_LINK);
+
+  //active?
   const isLink = !!editor?.selection && someNode(editor, { match: { type } });
 
   const handleMouseDown = async (event: React.MouseEvent) => {
@@ -44,6 +47,7 @@ const ToolbarLinkButton: React.FC<ToolbarLinkButtonProps> = ({ icon }) => {
 
   const handleInsertLink = (url: string) => {
     if (selectionRef.current) {
+      //re-set the editor selection here
       editor.selection = selectionRef.current;
     }
     upsertLinkAtSelection(editor, { url });
